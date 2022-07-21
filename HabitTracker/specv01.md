@@ -63,3 +63,9 @@ Helps people keep track of their activities
 ## Wireframe
 Will follow up
 
+## Database
+`UserDefaults`
+
+## Todo
+ -[] Prepare wireframe
+
