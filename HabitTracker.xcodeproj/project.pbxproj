@@ -19,6 +19,7 @@
 		8AFA6E29288936C50058E08D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8AFA6E2B288936C80058E08D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AFA6E2E288936C80058E08D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8AFA6E35288937090058E08D /* spec.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = spec.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 			children = (
 				8AFA6E27288936C50058E08D /* HabitTrackerApp.swift */,
 				8AFA6E29288936C50058E08D /* ContentView.swift */,
+				8AFA6E35288937090058E08D /* spec.md */,
 				8AFA6E2B288936C80058E08D /* Assets.xcassets */,
 				8AFA6E2D288936C80058E08D /* Preview Content */,
 			);
