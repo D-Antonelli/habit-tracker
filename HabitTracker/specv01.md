@@ -67,5 +67,5 @@ Will follow up
 `UserDefaults`
 
 ## Todo
-- [ ]  Prepare wireframe
+- [ ]  https://github.com/D-Antonelli/habit-tracker/issues/1
 
