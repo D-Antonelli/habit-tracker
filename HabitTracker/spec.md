@@ -14,7 +14,7 @@ Helps people keep track of their activities
 
 ## Pages
 - **Habits page:** There are list of habits with details such as title
-- **Add new habit page:** Includes a form to add new habit with details such as `$title`, category and description
+- **Add new habit page:** Includes a form to add new habit with details such as `$title`, `$count` and `$description` and `$save` button
 - **Detail page:** Contains details of a habit, such as title, description, category, how many times, along with delete and add count buttons 
 
 ## Business logic
@@ -24,4 +24,7 @@ Helps people keep track of their activities
 | placeholder  | value  |
 |---|---|
 | `$title`  | Name your habit  |
+| `$count`  | Default count |
+| `$description` | Add a note |
+| `$save` | Save |
 
