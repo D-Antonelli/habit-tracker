@@ -1,4 +1,4 @@
-#  Habit Tracker App IOS v01
+#  Habit Tracker App IOS v0.0.1
 
 ## Introduction
 A mobile app that keeps track of habits with how much they're done
