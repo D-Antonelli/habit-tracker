@@ -67,6 +67,5 @@ Will follow up
 `UserDefaults`
 
 ## Todo
- -[] Prepare wireframe
- -[]
+- [ ]  Prepare wireframe
 
