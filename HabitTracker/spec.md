@@ -7,10 +7,10 @@ A mobile app that keeps track of habits with how much they're done
 Helps people keep track of their activities
 
 ## User story
-- User can add a new habit by entering name, description and category [from set of categories]
-- User can click on a habit and see details
-- User can tap on a habit, see details, and increase its count
+- User can add a new habit
+- User can see details of a habit
 - User can remove a habit
+- User can increase the count of habit
 
 ## Pages / sheets / pop-ups
 - **Habits page:** Contains list of habits with details such as `$title`, `$total_count`, and right details arrow
