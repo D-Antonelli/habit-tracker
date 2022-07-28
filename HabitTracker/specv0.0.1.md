@@ -61,11 +61,11 @@ Helps people keep track of their activities
 | `$delete_body` | Are you sure you want to delete `item` |
 
 ## Wireframe
-Will follow up
+https://www.figma.com/file/dZnaZxsIOAWgD868qURBWt/Habit-Tracker-IOS?node-id=0%3A1
 
 ## Database
 `UserDefaults`
 
 ## Todo
-- [ ]  https://github.com/D-Antonelli/habit-tracker/issues/1
+- [x]  https://github.com/D-Antonelli/habit-tracker/issues/1
 
