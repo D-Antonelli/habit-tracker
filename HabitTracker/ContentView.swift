@@ -49,45 +49,60 @@ struct ContentView: View {
     
     var body: some View {
         if habits.list.isEmpty {
-                InitialView(habits: habits, showingAddSheet: $showingAddSheet)
+            InitialView(habits: habits, showingAddSheet: $showingAddSheet)
                 .sheet(isPresented: $showingAddSheet) {
                     AddView(habits: habits)
                 }
         } else {
             NavigationView {
-                Text("List is not empty")
-                
-                
-                
-                
-                    
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Text("My habits")
-                                .font(.title)
-                                .accessibilityAddTraits(.isHeader)
-                                
-                        }
-                        
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button {
-                                // add sheet
-                            } label: {
-                                Image(systemName: "plus")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(.black)
+                List {
+                    ForEach(habits.list) { habit in
+                        NavigationLink {
+                            Text("Detail for \(habit.name)")
+                        } label: {
+                            Group {
+                                Text("\(habit.name)")
+                                    .font(.title)
                             }
                         }
+                    }
+                    .padding(25)
+                    .background(Color.darkBackground)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .overlay(RoundedRectangle(cornerRadius: 15).stroke(.white))
+                    .listRowSeparator(.hidden)
+                    
+                    
+                }
+                
+                .listStyle(.plain)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Text("My habits")
+                            .font(.title)
+                            .accessibilityAddTraits(.isHeader)
                         
                     }
-        }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            // add sheet
+                        } label: {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .foregroundColor(.black)
+                        }
+                    }
+                    
+                }
+            }
             .padding()
-        
+            
+            
+        }
         
     }
-    
-}
 }
 
 struct ContentView_Previews: PreviewProvider {
