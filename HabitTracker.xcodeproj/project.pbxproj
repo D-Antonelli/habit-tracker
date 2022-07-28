@@ -10,6 +10,8 @@
 		8A6A541B2892857C00152072 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A541A2892857C00152072 /* Habit.swift */; };
 		8A6A541D289286B900152072 /* Habits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A541C289286B900152072 /* Habits.swift */; };
 		8A6A54232892CA2000152072 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A54222892CA2000152072 /* Color-Theme.swift */; };
+		8A6A54252892DEFE00152072 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A54242892DEFE00152072 /* InitialView.swift */; };
+		8A6A54272892E38500152072 /* ListStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A54262892E38500152072 /* ListStyleView.swift */; };
 		8AFA6E28288936C50058E08D /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA6E27288936C50058E08D /* HabitTrackerApp.swift */; };
 		8AFA6E2A288936C50058E08D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA6E29288936C50058E08D /* ContentView.swift */; };
 		8AFA6E2C288936C80058E08D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFA6E2B288936C80058E08D /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 		8A6A541A2892857C00152072 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		8A6A541C289286B900152072 /* Habits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habits.swift; sourceTree = "<group>"; };
 		8A6A54222892CA2000152072 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
+		8A6A54242892DEFE00152072 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
+		8A6A54262892E38500152072 /* ListStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStyleView.swift; sourceTree = "<group>"; };
 		8AFA6E24288936C50058E08D /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AFA6E27288936C50058E08D /* HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerApp.swift; sourceTree = "<group>"; };
 		8AFA6E29288936C50058E08D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				8AFA6E2B288936C80058E08D /* Assets.xcassets */,
 				8AFA6E2D288936C80058E08D /* Preview Content */,
 				8A6A54222892CA2000152072 /* Color-Theme.swift */,
+				8A6A54242892DEFE00152072 /* InitialView.swift */,
+				8A6A54262892E38500152072 /* ListStyleView.swift */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -151,6 +157,8 @@
 				8A6A541B2892857C00152072 /* Habit.swift in Sources */,
 				8AFA6E2A288936C50058E08D /* ContentView.swift in Sources */,
 				8A6A541D289286B900152072 /* Habits.swift in Sources */,
+				8A6A54272892E38500152072 /* ListStyleView.swift in Sources */,
+				8A6A54252892DEFE00152072 /* InitialView.swift in Sources */,
 				8AFA6E28288936C50058E08D /* HabitTrackerApp.swift in Sources */,
 				8A6A54232892CA2000152072 /* Color-Theme.swift in Sources */,
 			);
