@@ -7,13 +7,28 @@
 
 import SwiftUI
 
+struct AddView: View {
+    @ObservedObject var habits: Habits
+    
+    var body: some View {
+        Button {
+            habits.list.append(Habit(name: "Drink Water", count: 1, note: "Everyday"))
+            habits.save()
+        } label: {
+            Text("Add new")
+        }
+    }
+}
+
 struct ContentView: View {
     @StateObject var habits = Habits()
+    
+    @State private var showingAddSheet = false
     
     var body: some View {
         if habits.list.isEmpty {
             Button {
-                // open add habit sheet
+                showingAddSheet.toggle()
             } label: {
                 VStack(spacing: 30) {
                     Text("Tap to add your first habit")
@@ -26,10 +41,28 @@ struct ContentView: View {
                 }
                 .padding()
             }
+            .sheet(isPresented: $showingAddSheet) {
+                AddView(habits: habits)
+            }
         } else {
-            Text("List is not empty")
-        }
+            NavigationView {
+                Text("List is not empty")
+                    .navigationTitle("My Habits")
+                    .toolbar {
+                        Button {
+                            // add sheet
+                        } label: {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .foregroundColor(.black)
+                        }
+                    }
+            }
 
+            
+        }
+        
     }
 }
 
