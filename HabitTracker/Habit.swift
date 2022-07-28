@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Habit {
+struct Habit: Codable {
     let name: String
     let count: Int
     let note: String

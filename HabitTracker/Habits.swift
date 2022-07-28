@@ -8,5 +8,22 @@
 import Foundation
 
 class Habits: ObservableObject {
-    @Published var list: [Habit] = []
+    @Published var list: [Habit]
+    
+    init() {
+        if let data = UserDefaults.standard.data(forKey: "SavedHabits") {
+            if let decoded = try? JSONDecoder().decode([Habit].self, from: data) {
+                list = decoded
+                return
+            }
+        }
+        
+        list = []
+    }
+    
+    func save() {
+        if let encoded = try? JSONEncoder().encode(list) {
+            UserDefaults.standard.set(encoded, forKey: "SavedHabits")
+        }
+    }
 }
