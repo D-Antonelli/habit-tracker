@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var habits = Habits()
+    
     var body: some View {
-        Button {
-            // do something
-        } label: {
-            VStack(spacing: 30) {
-                Text("Add your first habit")
-                    .font(.largeTitle)
-                    .foregroundColor(.gray)
-                Image(systemName: "plus")
-                    .resizable()
-                    .frame(width: 150, height: 150, alignment: .center)
-                    .foregroundColor(.gray)
+        if habits.list.isEmpty {
+            Button {
+                // open add habit sheet
+            } label: {
+                VStack(spacing: 30) {
+                    Text("Tap to add your first habit")
+                        .font(.largeTitle)
+                        .foregroundColor(.gray)
+                    Image(systemName: "plus")
+                        .resizable()
+                        .frame(width: 150, height: 150, alignment: .center)
+                        .foregroundColor(.gray)
+                }
+                .padding()
             }
-            
-            
+        } else {
+            Text("List is not empty")
         }
+
     }
 }
 

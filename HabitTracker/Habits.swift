@@ -8,5 +8,5 @@
 import Foundation
 
 class Habits: ObservableObject {
-    @Published var habits: [Habit] = []
+    @Published var list: [Habit] = []
 }
