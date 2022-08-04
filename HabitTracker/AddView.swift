@@ -50,12 +50,11 @@ struct AddView: View {
                                 .padding()
                                 .background(.white)
                                 .modifier(WhiteRoundedRectangleShape())
-                                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                                
                                 
                             
                         } header: {
                             Text("NAME YOUR HABIT")
-                                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                                 .foregroundColor(.black)
                                 .font(.body)
                         }
@@ -66,12 +65,10 @@ struct AddView: View {
                                 .padding()
                                 .background(.white)
                                 .modifier(WhiteRoundedRectangleShape())
-                                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                                 
                             
                         } header: {
                             Text("DEFAULT COUNT")
-                                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                                 .foregroundColor(.black)
                                 .font(.body)
                         }
@@ -79,6 +76,7 @@ struct AddView: View {
                     }
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                     
                 }
                 .listStyle(PlainListStyle())
