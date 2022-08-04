@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-struct AddView: View {
-    @ObservedObject var habits: Habits
-    
-    var body: some View {
-        Button {
-            habits.list.append(Habit(name: "Drink Water", count: 1, note: "Everyday"))
-            habits.save()
-        } label: {
-            Text("Add new")
-        }
-    }
-}
-
 struct ContentView: View {
     @StateObject var habits = Habits()
     
