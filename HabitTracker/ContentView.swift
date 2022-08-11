@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var showingAddSheet = false
     
     var body: some View {
+        Group {
         if habits.list.isEmpty {
             InitialView(habits: habits, showingAddSheet: $showingAddSheet)
                 .sheet(isPresented: $showingAddSheet) {
@@ -23,8 +24,11 @@ struct ContentView: View {
                 AddView(habits: habits)
             }
         }
-        
+        }
+        .preferredColorScheme(.light)
+            
     }
+        
 }
 
 struct ContentView_Previews: PreviewProvider {
