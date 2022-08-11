@@ -12,6 +12,7 @@ struct AddView: View {
     @ObservedObject var habits: Habits
     
     @State private var habitName: String = ""
+    @State private var count = 1
     
     var body: some View {
         Group {
@@ -54,21 +55,23 @@ struct AddView: View {
                                 
                             
                         } header: {
-                            Text("NAME YOUR HABIT")
+                            Text("NAME YOUR HABIT:")
                                 .foregroundColor(.black)
                                 .font(.body)
                         }
                         
                         
                         Section {
-                            TextField("Coffee, tea, jogging, etc.", text: $habitName)
+                            TextField("", value: $count, format: .number)
                                 .padding()
                                 .background(.white)
                                 .modifier(WhiteRoundedRectangleShape())
+                                .keyboardType(.decimalPad)
+                                .frame(maxWidth: 120)
                                 
                             
                         } header: {
-                            Text("DEFAULT COUNT")
+                            Text("COUNT:")
                                 .foregroundColor(.black)
                                 .font(.body)
                         }
