@@ -13,6 +13,8 @@ struct AddView: View {
     
     @State private var habitName: String = ""
     @State private var count = 1
+    @State private var note = ""
+    
     
     var body: some View {
         Group {
@@ -62,16 +64,27 @@ struct AddView: View {
                         
                         
                         Section {
-                            TextField("", value: $count, format: .number)
+                            Stepper("\(count)", value: $count, in: 1...9999999)
                                 .padding()
                                 .background(.white)
                                 .modifier(WhiteRoundedRectangleShape())
-                                .keyboardType(.decimalPad)
-                                .frame(maxWidth: 120)
                                 
                             
                         } header: {
-                            Text("COUNT:")
+                            Text("DEFAULT COUNT:")
+                                .foregroundColor(.black)
+                                .font(.body)
+                        }
+                        
+                        
+                        Section {
+                            TextEditor(text: $note)
+                                .padding()
+                                .background(.white)
+                                .modifier(WhiteRoundedRectangleShape())
+                                .frame(height: 150)
+                        } header: {
+                            Text("NOTES:")
                                 .foregroundColor(.black)
                                 .font(.body)
                         }
