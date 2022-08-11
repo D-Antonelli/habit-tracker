@@ -18,7 +18,7 @@ struct AddView: View {
     
     var body: some View {
         Group {
-            VStack(spacing: 50) {
+            VStack {
                 HStack {
                     Text("CREATE")
                         .font(.title)
@@ -29,11 +29,11 @@ struct AddView: View {
                             // save habit
                         } label: {
                             Text("SAVE")
-                                .padding(12)
+                                .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
                                 .foregroundColor(.black)
                                 .background(.white)
-                                .modifier(WhiteRoundedRectangleShape())
-                            
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(.white))
                         }
                         
                         Button {
