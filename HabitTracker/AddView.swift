@@ -80,6 +80,7 @@ struct AddView: View {
                                 .background(.white)
                                 .modifier(WhiteRoundedRectangleShape())
                                 .focused($focusedField, equals: .count)
+                                .frame(maxWidth: 200)
                                 
                             
                         } header: {
@@ -116,7 +117,7 @@ struct AddView: View {
             }
 
         }
-        .padding(25)
+        .padding()
         .background(.darkBackground)
     }
     
