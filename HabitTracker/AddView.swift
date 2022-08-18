@@ -9,11 +9,19 @@ import SwiftUI
 
 
 struct AddView: View {
+    private enum Field: Int, CaseIterable {
+        case habit, count, note
+    }
+    
     @ObservedObject var habits: Habits
     
     @State private var habitName: String = ""
     @State private var count = 1
     @State private var note = ""
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    @FocusState private var focusedField: Field?
     
     
     var body: some View {
@@ -26,7 +34,10 @@ struct AddView: View {
                     Spacer()
                     HStack(spacing: 30) {
                         Button {
-                            // save habit
+                            focusedField = nil
+                            habits.list.append(Habit(name: habitName, count: count, note: note))
+                            habits.save()
+                            presentationMode.wrappedValue.dismiss()
                         } label: {
                             Text("SAVE")
                                 .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
@@ -37,7 +48,7 @@ struct AddView: View {
                         }
                         
                         Button {
-                            // exit screen
+                            presentationMode.wrappedValue.dismiss()
                         } label: {
                             Image(systemName: "multiply")
                                 .font(.title2.bold())
@@ -53,13 +64,13 @@ struct AddView: View {
                                 .padding()
                                 .background(.white)
                                 .modifier(WhiteRoundedRectangleShape())
-                                
+                                .focused($focusedField, equals: .habit)
                                 
                             
                         } header: {
                             Text("NAME YOUR HABIT:")
                                 .foregroundColor(.black)
-                                .font(.body)
+                              
                         }
                         
                         
@@ -68,12 +79,13 @@ struct AddView: View {
                                 .padding()
                                 .background(.white)
                                 .modifier(WhiteRoundedRectangleShape())
+                                .focused($focusedField, equals: .count)
                                 
                             
                         } header: {
                             Text("DEFAULT COUNT:")
                                 .foregroundColor(.black)
-                                .font(.body)
+                            
                         }
                         
                         
@@ -83,11 +95,14 @@ struct AddView: View {
                                 .background(.white)
                                 .modifier(WhiteRoundedRectangleShape())
                                 .frame(height: 150)
+                                .focused($focusedField, equals: .note)
+                            
                         } header: {
                             Text("NOTES:")
                                 .foregroundColor(.black)
-                                .font(.body)
+                            
                         }
+
                         
                     }
                     .listRowBackground(Color.clear)
@@ -95,9 +110,11 @@ struct AddView: View {
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                     
                 }
+               
                 .listStyle(PlainListStyle())
                 
             }
+
         }
         .padding(25)
         .background(.darkBackground)
