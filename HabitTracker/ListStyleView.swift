@@ -18,9 +18,12 @@ struct ListStyleView: View {
                     NavigationLink {
                         // detail view
                     } label: {
-                        Group {
+                        VStack(alignment: .leading, spacing: 5) {
                             Text("\(habit.name)")
-                                .font(.title2)
+                                .textCase(.uppercase)
+                                .font(.body.bold())
+                            Text("COUNT: \(habit.count)")
+                                .font(.footnote)
                         }
                     }
                 }
@@ -31,28 +34,29 @@ struct ListStyleView: View {
                 
             }
             .listStyle(.plain)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text("My habits")
-                        .font(.title)
-                        .accessibilityAddTraits(.isHeader)
-                }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showingAddSheet.toggle()
-                    } label: {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(.black)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Text("My habits")
+                                .font(.title)
+                                .accessibilityAddTraits(.isHeader)
+                        }
+        
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button {
+                                showingAddSheet.toggle()
+                            } label: {
+                                Image(systemName: "plus")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(.black)
+                            }
+                        }
+        
                     }
-                }
-                
-            }
-        }
-        .padding()
+        
     }
+        .padding()
+}
 }
 
 struct ListStyleView_Previews: PreviewProvider {
