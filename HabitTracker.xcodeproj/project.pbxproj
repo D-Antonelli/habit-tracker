@@ -18,6 +18,7 @@
 		8AFA6E2A288936C50058E08D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA6E29288936C50058E08D /* ContentView.swift */; };
 		8AFA6E2C288936C80058E08D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFA6E2B288936C80058E08D /* Assets.xcassets */; };
 		8AFA6E2F288936C80058E08D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AFA6E2E288936C80058E08D /* Preview Assets.xcassets */; };
+		8AFA7BCF28B7655400F34FFD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFA7BCE28B7655400F34FFD /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8AFA6E2B288936C80058E08D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8AFA6E2E288936C80058E08D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8AFA6E35288937090058E08D /* specv0.0.1.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = specv0.0.1.md; sourceTree = "<group>"; };
+		8AFA7BCE28B7655400F34FFD /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				8A6A54262892E38500152072 /* ListStyleView.swift */,
 				8A1BC58B289BB7E6003FCEE7 /* AddView.swift */,
 				8A1BC58D289BC71C003FCEE7 /* WhiteRoundedRectangleShape.swift */,
+				8AFA7BCE28B7655400F34FFD /* DetailView.swift */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				8A6A541B2892857C00152072 /* Habit.swift in Sources */,
 				8A1BC58E289BC71C003FCEE7 /* WhiteRoundedRectangleShape.swift in Sources */,
 				8AFA6E2A288936C50058E08D /* ContentView.swift in Sources */,
+				8AFA7BCF28B7655400F34FFD /* DetailView.swift in Sources */,
 				8A1BC58C289BB7E6003FCEE7 /* AddView.swift in Sources */,
 				8A6A541D289286B900152072 /* Habits.swift in Sources */,
 				8A6A54272892E38500152072 /* ListStyleView.swift in Sources */,

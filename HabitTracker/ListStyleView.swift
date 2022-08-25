@@ -16,7 +16,7 @@ struct ListStyleView: View {
             List {
                 ForEach(habits.list) { habit in
                     NavigationLink {
-                        // detail view
+                        DetailView(habit: habit)
                     } label: {
                         VStack(alignment: .leading, spacing: 5) {
                             Text("\(habit.name)")
@@ -34,33 +34,36 @@ struct ListStyleView: View {
                 
             }
             .listStyle(.plain)
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Text("My habits")
-                                .font(.title)
-                                .accessibilityAddTraits(.isHeader)
-                        }
-        
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button {
-                                showingAddSheet.toggle()
-                            } label: {
-                                Image(systemName: "plus")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundColor(.black)
-                            }
-                        }
-        
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("My habits")
+                        .font(.title)
+                        .accessibilityAddTraits(.isHeader)
+                }
+                
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showingAddSheet.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .foregroundColor(.black)   
                     }
-        
+                }
+                
+            }
+            
+        }
+       
     }
-        .padding()
 }
-}
+
 
 struct ListStyleView_Previews: PreviewProvider {
     static var previews: some View {
         ListStyleView(habits: Habits(), showingAddSheet: .constant(false))
     }
 }
+
