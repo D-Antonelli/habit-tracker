@@ -10,7 +10,12 @@ import SwiftUI
 import SwiftUI
 
 struct DetailView: View {
+    @ObservedObject var habits: Habits
     let habit: Habit
+    
+    @State var count: Int
+    @State var note: String
+   
     
     var body: some View {
         List {
@@ -18,7 +23,7 @@ struct DetailView: View {
                 VStack(alignment: .leading) {
                     Text("TOTAL COUNT")
                         .bold()
-                    Stepper("\(5) Times", value: .constant(5), in: 1...9999)
+                    Stepper("\(count) Times", value: $count, in: 1...9999)
                         .frame(maxWidth: 200)
                         .padding()
                         .background(.white)
@@ -28,16 +33,25 @@ struct DetailView: View {
                 VStack(alignment: .leading) {
                     Text("NOTES")
                         .bold()
-                    TextEditor(text: .constant("MY NOTES"))
+                    TextEditor(text: $note)
                         .padding()
                         .background(.white)
                         .modifier(WhiteRoundedRectangleShape())
                         .frame(height: 150)
                 }
                 
+                
                 HStack {
+                    // save habit
                     Button {
-                        // delete habit
+                        habits.list = habits.list.map { item in
+                            if(item.id == habit.id) {
+                                return Habit(name: habit.name, count: count, note: note)
+                            } else {
+                                return item
+                            }
+                        }
+                        habits.save()
                     } label: {
                         Text("SAVE")
                             .padding(EdgeInsets(top: 9, leading: 18, bottom: 9, trailing: 18))
@@ -72,6 +86,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(habit: Habit(name: "Drink water", count: 3, note: "2bottles/day"))
+        DetailView(habits: Habits(), habit: Habit(name: "Drink water", count: 3, note: "2bottles/day"), count: 3, note: "note")
     }
 }
