@@ -35,14 +35,26 @@ struct DetailView: View {
                         .frame(height: 150)
                 }
                 
-                Button {
+                HStack {
+                    Button {
+                        // delete habit
+                    } label: {
+                        Text("SAVE")
+                            .padding(EdgeInsets(top: 9, leading: 18, bottom: 9, trailing: 18))
+                            .background(.green)
+                            .foregroundColor(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
                     
-                } label: {
-                    Text("DELETE")
-                        .padding(EdgeInsets(top: 9, leading: 18, bottom: 9, trailing: 18))
-                        .background(.red)
-                        .foregroundColor(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    Button {
+                        // delete habit
+                    } label: {
+                        Text("DELETE")
+                            .padding(EdgeInsets(top: 9, leading: 18, bottom: 9, trailing: 18))
+                            .background(.red)
+                            .foregroundColor(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
                 }
             }
             .listRowBackground(Color.clear)
