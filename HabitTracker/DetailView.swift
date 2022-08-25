@@ -34,6 +34,16 @@ struct DetailView: View {
                         .modifier(WhiteRoundedRectangleShape())
                         .frame(height: 150)
                 }
+                
+                Button {
+                    
+                } label: {
+                    Text("DELETE")
+                        .padding(EdgeInsets(top: 9, leading: 18, bottom: 9, trailing: 18))
+                        .background(.red)
+                        .foregroundColor(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
             }
             .listRowBackground(Color.clear)
             .listRowSeparator(.hidden)
