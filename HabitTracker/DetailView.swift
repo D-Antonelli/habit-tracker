@@ -15,7 +15,7 @@ struct DetailView: View {
     
     @State var count: Int
     @State var note: String
-   
+    
     
     var body: some View {
         List {
@@ -42,14 +42,13 @@ struct DetailView: View {
                 
                 
                 HStack {
-                    // save habit
                     Button {
                         habits.list = habits.list.map { item in
-                            if(item.id == habit.id) {
+                            if item.id == habit.id {
                                 return Habit(name: habit.name, count: count, note: note)
-                            } else {
-                                return item
                             }
+                            return item
+
                         }
                         habits.save()
                     } label: {
@@ -61,7 +60,10 @@ struct DetailView: View {
                     }
                     
                     Button {
-                        // delete habit
+                        habits.list = habits.list.filter {
+                            $0.id != habit.id
+                        }
+                        habits.save()
                     } label: {
                         Text("DELETE")
                             .padding(EdgeInsets(top: 9, leading: 18, bottom: 9, trailing: 18))
@@ -78,6 +80,7 @@ struct DetailView: View {
         }
         .padding([.vertical])
         .listStyle(.plain)
+        .buttonStyle(.borderless)
         
         .navigationTitle(habit.name)
         .background(.darkBackground)
