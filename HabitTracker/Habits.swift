@@ -26,4 +26,8 @@ class Habits: ObservableObject {
             UserDefaults.standard.set(encoded, forKey: "SavedHabits")
         }
     }
+    
+    func delete(habit: Habit) {
+        list = list.filter { $0.id != habit.id }
+    }
 }

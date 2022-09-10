@@ -17,7 +17,6 @@ struct DetailView: View {
     @State private var note: String = ""
     
     
-    
     var body: some View {
         List {
             VStack( alignment: .leading, spacing: 30) {
@@ -61,9 +60,7 @@ struct DetailView: View {
                     }
                     
                     Button {
-                        habits.list = habits.list.filter {
-                            $0.id != habit.id
-                        }
+                        habits.delete(habit: habit)
                         habits.save()
                     } label: {
                         Text("DELETE")
