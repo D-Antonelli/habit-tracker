@@ -16,7 +16,7 @@ struct ListStyleView: View {
             List {
                 ForEach(habits.list) { habit in
                     NavigationLink {
-                        DetailView(habits: habits, habit: habit, count: habit.count, note: habit.note)
+                        DetailView(habits: habits, habit: habit)
                     } label: {
                         VStack(alignment: .leading, spacing: 5) {
                             Text("\(habit.name)")

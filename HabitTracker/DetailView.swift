@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-import SwiftUI
+// https://www.appypie.com/swiftui-app-lifecycle-how-to
 
 struct DetailView: View {
     @ObservedObject var habits: Habits
     let habit: Habit
     
-    @State var count: Int
-    @State var note: String
+    @State private var count: Int = 1
+    @State private var note: String = ""
+    
     
     
     var body: some View {
@@ -48,7 +49,7 @@ struct DetailView: View {
                                 return Habit(name: habit.name, count: count, note: note)
                             }
                             return item
-
+                            
                         }
                         habits.save()
                     } label: {
@@ -78,6 +79,12 @@ struct DetailView: View {
             
             
         }
+        .onAppear() {
+            if let i = habits.list.firstIndex(where: { $0.id == self.habit.id }) {
+                self.count = habits.list[i].count
+                self.note = habits.list[i].note
+            }
+        }
         .padding([.vertical])
         .listStyle(.plain)
         .buttonStyle(.borderless)
@@ -85,10 +92,14 @@ struct DetailView: View {
         .navigationTitle(habit.name)
         .background(.darkBackground)
     }
+        
+        
+        
+        
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(habits: Habits(), habit: Habit(name: "Drink water", count: 3, note: "2bottles/day"), count: 3, note: "note")
+        DetailView(habits: Habits(), habit: Habit(name: "Drink water", count: 3, note: "2bottles/day"))
     }
 }
