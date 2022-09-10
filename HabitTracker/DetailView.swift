@@ -43,13 +43,7 @@ struct DetailView: View {
                 
                 HStack {
                     Button {
-                        habits.list = habits.list.map { item in
-                            if item.id == habit.id {
-                                return Habit(name: habit.name, count: count, note: note)
-                            }
-                            return item
-                            
-                        }
+                        habits.update(from: self.habit, to: Habit(name: habit.name, count: count, note: note))
                         habits.save()
                     } label: {
                         Text("SAVE")

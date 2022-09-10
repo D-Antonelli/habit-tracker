@@ -27,6 +27,16 @@ class Habits: ObservableObject {
         }
     }
     
+    func update(from: Habit, to: Habit) {
+        list = list.map {
+            if $0.id == from.id {
+                return to
+            }
+            return $0
+            
+        }
+    }
+    
     func delete(habit: Habit) {
         list = list.filter { $0.id != habit.id }
     }
