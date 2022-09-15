@@ -31,6 +31,10 @@ class Habits: ObservableObject {
         list.append(habit)
     }
     
+    func getAll() -> [Habit] {
+        return list
+    }
+    
     func update(from: Habit, to: Habit) {
         list = list.map {
             if $0.id == from.id {

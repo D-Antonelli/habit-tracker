@@ -103,7 +103,6 @@ struct AddView: View {
                                 .foregroundColor(.black)
                             
                         }
-
                         
                     }
                     .listRowBackground(Color.clear)

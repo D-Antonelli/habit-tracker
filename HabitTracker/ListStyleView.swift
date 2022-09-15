@@ -14,49 +14,33 @@ struct ListStyleView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(habits.list) { habit in
+                ForEach(habits.getAll()) { habit in
                     NavigationLink {
                         DetailView(habits: habits, habit: habit)
                     } label: {
-                        VStack(alignment: .leading, spacing: 5) {
+                        VStack(alignment: .leading) {
                             Text("\(habit.name)")
-                                .textCase(.uppercase)
-                                .font(.body.bold())
                             Text("COUNT: \(habit.count)")
-                                .font(.footnote)
                         }
                     }
                 }
-                .padding(25)
-                .background(Color.darkBackground)
-                .modifier(WhiteRoundedRectangleShape())
-                .listRowSeparator(.hidden)
-                
             }
-            .listStyle(.plain)
+            .navigationTitle("My habits")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text("My habits")
-                        .font(.title)
-                        .accessibilityAddTraits(.isHeader)
-                }
-                
-                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showingAddSheet.toggle()
                     } label: {
                         Image(systemName: "plus")
                             .resizable()
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(.black)   
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.black)
                     }
                 }
                 
             }
-            
         }
-       
     }
 }
 
