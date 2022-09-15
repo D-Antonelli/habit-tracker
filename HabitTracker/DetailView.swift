@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// https://www.appypie.com/swiftui-app-lifecycle-how-to
-
 struct DetailView: View {
     @ObservedObject var habits: Habits
     let habit: Habit

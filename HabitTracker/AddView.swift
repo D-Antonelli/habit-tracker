@@ -35,7 +35,7 @@ struct AddView: View {
                     HStack(spacing: 30) {
                         Button {
                             focusedField = nil
-                            habits.list.append(Habit(name: habitName, count: count, note: note))
+                            habits.add(habit:Habit(name: habitName, count: count, note: note))
                             habits.save()
                             presentationMode.wrappedValue.dismiss()
                         } label: {
