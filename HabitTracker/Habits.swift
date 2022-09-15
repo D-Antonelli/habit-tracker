@@ -44,4 +44,8 @@ class Habits: ObservableObject {
     func delete(habit: Habit) {
         list = list.filter { $0.id != habit.id }
     }
-}
+    
+    func isEmpty() -> Bool {
+        return list.isEmpty
+    }
+ }

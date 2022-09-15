@@ -14,21 +14,22 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-        if habits.list.isEmpty {
-            InitialView(habits: habits, showingAddSheet: $showingAddSheet)
-                .sheet(isPresented: $showingAddSheet) {
-                    AddView(habits: habits)
-                }
-        } else {
-            ListStyleView(habits: habits, showingAddSheet: $showingAddSheet).sheet(isPresented: $showingAddSheet) {
-                AddView(habits: habits)
+            if habits.isEmpty() {
+                InitialView(habits: habits, showingAddSheet: $showingAddSheet)
+                    .sheet(isPresented: $showingAddSheet) {
+                        AddView(habits: habits)
+                    }
+            } else {
+                ListStyleView(habits: habits, showingAddSheet: $showingAddSheet)
+                    .sheet(isPresented: $showingAddSheet) {
+                        AddView(habits: habits)
+                    }
             }
         }
-        }
         .preferredColorScheme(.light)
-            
-    }
         
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

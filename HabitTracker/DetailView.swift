@@ -13,7 +13,7 @@ struct DetailView: View {
     
     @State private var count: Int = 1
     @State private var note: String = ""
-    
+
     
     var body: some View {
         List {
