@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @ObservedObject var habits: Habits
+    @Environment(\.dismiss) var dismiss
     let habit: Habit
     
     @State private var count: Int = 1
@@ -39,6 +40,8 @@ struct DetailView: View {
                 Button {
                     habits.delete(habit: habit)
                     habits.save()
+                    
+                    dismiss()
                 } label: {
                     Text("DELETE")
                 }

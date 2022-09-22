@@ -19,44 +19,44 @@ struct AddView: View {
     
     
     var body: some View {
-                HStack {
-                    Text("CREATE")
-                    Spacer()
-                        Button {
-                            habits.add(habit:Habit(name: habitName, count: count, note: note))
-                            habits.save()
-                            presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Text("SAVE")
-                        }
-                        
-                        Button {
-                            presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Image(systemName: "multiply")
-                        }
-                    }
-                .padding()
-                .background(.red)
-
-                ScrollView {
-                    VStack(alignment: .leading) {
-                        Text("NAME YOUR HABIT:")
-                        TextField("Coffee, tea, jogging, etc.", text: $habitName)
-                    }
-                    
-                    VStack(alignment: .leading) {
-                        Text("DEFAULT COUNT")
-                        Stepper("\(count)", value: $count, in: 1...9999999)
-                    }
-                    
-                    VStack(alignment: .leading) {
-                        Text("NOTES:")
-                        TextEditor(text: $note)
-                            .background(.blue)
-                            .frame(height: 150)
-                    }
-                }
+        HStack {
+            Text("CREATE")
+            Spacer()
+            Button {
+                habits.add(habit:Habit(name: habitName, count: count, note: note))
+                habits.save()
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Text("SAVE")
+            }
+            
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Image(systemName: "multiply")
+            }
+        }
+        .padding()
+        .background(.red)
+        
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text("NAME YOUR HABIT:")
+                TextField("Coffee, tea, jogging, etc.", text: $habitName)
+            }
+            
+            VStack(alignment: .leading) {
+                Text("DEFAULT COUNT")
+                Stepper("\(count)", value: $count, in: 1...9999999)
+            }
+            
+            VStack(alignment: .leading) {
+                Text("NOTES:")
+                TextEditor(text: $note)
+                    .background(.blue)
+                    .frame(height: 150)
+            }
+        }
     }
     
     
