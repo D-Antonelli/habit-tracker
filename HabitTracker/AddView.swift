@@ -37,7 +37,6 @@ struct AddView: View {
             }
         }
         .padding()
-        .background(.red)
         
         ScrollView {
             VStack(alignment: .leading) {
